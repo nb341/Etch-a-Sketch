@@ -4,27 +4,25 @@ import './index.scss';
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-const Grid = (props)=>{
-  const block = ()=>{
-    <div>
+const Divider = (props)=>{
+  
+}
 
-    </div>
-  };
-  const size = props.size;
-      for(let i =0; i<Math.pow(size,2);i++){
-        
-      }
-  return(
-    <h1>{props.size}</h1>
-  )
+const Grid = (props)=>{
+  const divs = Array.from(Array(16*16), (e, i) => {
+    
+    return (i%16==0) ? '\n' : <div key={i}className="block" style={{height: `40px`, width: `40px`}}></div>
+  })
+  return <div>{divs}</div>
 }
 
 
 const App = ()=>{
   const [size, setSize] = useState(16);
   return (
-    <div className="container">
-      <Grid size={size}/>
+    <div className="container"> 
+      
+      <Grid/>
     </div>
   )
 }
